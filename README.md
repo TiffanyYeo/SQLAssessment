@@ -31,7 +31,8 @@ LIMIT 24;
 
 # Task (4):
 ## Do different schools (.edu domains) prefer different courses?
-SELECT count(progress.user_id) AS "Enrolled Students", email_domain AS "School", learn_cpp AS "CPP", learn_sql AS "SQL", learn_html AS "HTML", learn_javascript AS "Javascript", learn_java AS "Java"
+SELECT count(progress.user_id) AS "Enrolled Students", email_domain AS "School", SUM(CASE WHEN learn_cpp != '' THEN 1 ELSE 0 END) AS "CPP",
+SUM(CASE WHEN learn_sql != '' THEN 1 ELSE 0 END) AS "SQL", SUM(CASE WHEN learn_html != '' THEN 1 ELSE 0 END) AS "HTML", SUM(CASE WHEN learn_javascript != '' THEN 1 ELSE 0 END) AS "Javascript", SUM(CASE WHEN learn_java != '' THEN 1 ELSE 0 END) AS "JAVA"
 FROM users
 JOIN progress ON users.user_id = progress.user_id
 GROUP BY email_domain
