@@ -61,3 +61,12 @@ SUM(CASE WHEN learn_sql != '' THEN 1 ELSE 0 END) AS "Learn SQL", SUM(CASE WHEN l
 FROM users
 JOIN progress ON users.user_id = progress.user_id
 WHERE users.city = "Chicago";
+
+
+# ●  	What did you like about this project?
+Good experience on how data could be manipulated to form table of analytical data.
+# ●  	What did you struggle with in this project?
+Grouping of data to obtain statistics using count correctly.
+# ●  	What would make your experience with this assessment better?
+Use of codecademy is a good platform to work on your assessment with some good references. Able to google using the hint and keyword given.
+
